@@ -129,6 +129,7 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+.basic-poll-app/
 
 # Spyder project settings
 .spyderproject
