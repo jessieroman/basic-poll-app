@@ -9,14 +9,10 @@
 
 ### Key Points
 
-1. Create your project an app
-2. Create a view function in views.py file.
-3. Create a path in urls.py to map the view function to a URL.
-4. Run the thing
-
-```Shell
-py .\manage.py runserver
-```
+- Create a Django project and app.
+- Define a view function in views.py.
+- Map the view to a URL in urls.py.
+- Run the server: python manage.py runserver.
 
 ## Writing your first Django app, part 2
 
@@ -33,10 +29,9 @@ py .\manage.py runserver
 
 ### Key Points
 
-1. Change your models (in models.py).
-1. Run python manage.py makemigrations to create migrations for those changes
-1. Run python manage.py migrate to apply those changes to the database.
-1. Built in automated admin panel for managing models and data (add line to admin.py first)
+- Define models in models.py.
+- Run makemigrations to track changes and migrate to apply them.
+- Register models in admin.py to manage via the admin panel:
 
 ```python
 # Register your models here.
@@ -59,14 +54,15 @@ admin.site.register(Question)
 
 ### Pt3 Key Points
 
-- You can pass variables and parameters to views.py
-- You can make paths leveraging variables in urls.py
-- Use templates instead of hard coding into views.py
-- you can create templates folder in the app directory and create an HTML file for each view function. 
-- You need to have a folder for the app JUST in case due to djangos structure requirements, e.g. polls/templates/polls/index.html
-- You should import render from django.shortcuts to use the render() shortcut function in views.py instead of template loader. it's less lines of code. more efficient.
-- always namespace and loosely couple URLs in templates to avoid issues with other app template conflictions, and hard coded urls, e.g. < li >< a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}< /a>< /li>
-- 
+- Use render() to simplify rendering templates.
+- Replace hardcoded URLs in templates with {% url %}.
+- Organize templates in polls/templates/polls/.
+- Use get_object_or_404() for cleaner error handling.
+- Namespace URLs to avoid conflicts between apps.
+
+```html
+<li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
+```
 
 ## Resources
 
