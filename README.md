@@ -64,6 +64,20 @@ admin.site.register(Question)
 <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
 ```
 
+## Writing your first Django app, part 4
+
+1. Write a minimal form
+2. Use generic views: Less code is better
+   1. Amend URLconf
+   2. Amend views
+
+### Pt4 Key Points
+
+- Always use HttpResponseRedirect to avoid people resubmitting on back button.
+- Use POST when updating data in web apps as a best practice.
+- `{% csrf_token %} for Cross Site Request Forgery protection.
+
+
 ## Resources
 
 1. **Django Documentation:** https://docs.djangoproject.com/en/5.1/intro/
