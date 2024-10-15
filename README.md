@@ -7,7 +7,7 @@
 1. Creating the Polls app
 1. Write your first view
 
-### Key Points
+### Pt1 Key Points
 
 - Create a Django project and app.
 - Define a view function in views.py.
@@ -27,7 +27,7 @@
     1. Make the poll app modifiable in the admin
     1. Explore the free admin functionality
 
-### Key Points
+### Pt2 Key Points
 
 - Define models in models.py.
 - Run makemigrations to track changes and migrate to apply them.
