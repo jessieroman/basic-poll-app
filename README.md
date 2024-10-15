@@ -1,83 +1,132 @@
-# Basic Poll App
+# Polls App
 
-## Writing your first Django app, part 1
+A simple polling application built with Django, demonstrating CRUD operations, user interaction, and admin management. This project showcases my ability to develop web applications using the Django framework, following best practices and efficient coding standards.
 
-1. Creating a project
-1. The development server
-1. Creating the Polls app
-1. Write your first view
+## Table of Contents
 
-### Pt1 Key Points
+- [Table of Contents](#table-of-contents)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Project Structure](#project-structure)
+- [Key Learnings](#key-learnings)
+- [License](#license)
+- [Acknowledgements](#acknowledgements)
+- [Future Improvements](#future-improvements)
+- [Contributing](#contributing)
 
-- Create a Django project and app.
-- Define a view function in views.py.
-- Map the view to a URL in urls.py.
-- Run the server: python manage.py runserver.
+## Features
 
-## Writing your first Django app, part 2
+- **Create Polls:** Users can create new polls with multiple choices.
+- **Vote:** Users can vote on their preferred options.
+- **Results Display:** Real-time display of poll results.
+- **Admin Interface:** Manage polls and choices through Django’s admin panel.
+- **User Authentication:** Secure user login and registration (if implemented).
+- **Responsive Design:** Mobile-friendly interface for accessibility.
 
-1. Database setup
-1. Creating models
-1. Activating models
-1. Playing with the API
-1. Introducing the Django Admin
-    1. Creating an admin user
-    1. Start the development server
-    1. Enter the admin site
-    1. Make the poll app modifiable in the admin
-    1. Explore the free admin functionality
+## Technologies Used
 
-### Pt2 Key Points
+- **Backend:** Django 5.1
+- **Frontend:** HTML, CSS, JavaScript
+- **Database:** SQLite (default for Django projects)
+- **Version Control:** Git, GitHub
+- **Others:** Bootstrap (if used for styling), Django REST Framework (if applicable)
 
-- Define models in models.py.
-- Run makemigrations to track changes and migrate to apply them.
-- Register models in admin.py to manage via the admin panel:
+## Installation
 
-```python
-# Register your models here.
-from .models import Question
+Follow these steps to set up the Polls App locally:
 
-admin.site.register(Question)
-```
+1. **Clone the Repository:**
 
-## Writing your first Django app, part 3
+    ```bash
+    git clone https://github.com/yourusername/polls-app.git
+    cd polls-app
+    ```
 
-1. Overview
-1. Writing more views
-1. Write views that actually do something
-   1. A shortcut: render()
-1. Raising a 404 error
-   1. A shortcut: get_object_or_404()
-1. Use the template system
-1. Removing hardcoded URLs in templates
-1. Namespacing URL names
+2. **Create a Virtual Environment:**
 
-### Pt3 Key Points
+    ```bash
+    python3 -m venv env
+    source env/bin/activate  # On Windows: env\Scripts\activate
+    ```
 
-- Use render() to simplify rendering templates.
-- Replace hardcoded URLs in templates with {% url %}.
-- Organize templates in polls/templates/polls/.
-- Use get_object_or_404() for cleaner error handling.
-- Namespace URLs to avoid conflicts between apps.
+3. **Install Dependencies:**
 
-```html
-<li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
-```
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-## Writing your first Django app, part 4
+4. **Apply Migrations:**
 
-1. Write a minimal form
-2. Use generic views: Less code is better
-   1. Amend URLconf
-   2. Amend views
+    ```bash
+    python manage.py makemigrations
+    python manage.py migrate
+    ```
 
-### Pt4 Key Points
+5. **Create a Superuser:**
 
-- Always use HttpResponseRedirect to avoid people resubmitting on back button.
-- Use POST when updating data in web apps as a best practice.
-- `{% csrf_token %} for Cross Site Request Forgery protection.
+    ```bash
+    python manage.py createsuperuser
+    ```
 
+6. **Run the Development Server:**
 
-## Resources
+    ```bash
+    python manage.py runserver
+    ```
 
-1. **Django Documentation:** https://docs.djangoproject.com/en/5.1/intro/
+7. **Access the Application:**
+    - Open your browser and navigate to `http://127.0.0.1:8000/polls/`
+    - Access the admin panel at `http://127.0.0.1:8000/admin/`
+
+## Usage
+
+1. **Viewing Polls:**
+    - Navigate to the polls section to view all available polls.
+    - Click on a poll to see its details and voting options.
+
+2. **Voting:**
+    - Select your preferred choice and submit your vote.
+    - After voting, you’ll be redirected to the results page displaying current poll standings.
+
+3. **Admin Management:**
+    - Log in to the admin panel using your superuser credentials.
+    - Create, update, or delete polls and choices as needed.
+
+![Polls List](screenshots/polls_list.png)
+![Poll Detail](screenshots/poll_detail.png)
+![Admin Panel](screenshots/admin_panel.png)
+
+## Project Structure
+
+## Key Learnings
+
+- **Django Framework:** Gained hands-on experience with Django’s MVC (Model-View-Controller) architecture.
+- **CRUD Operations:** Implemented Create, Read, Update, and Delete functionalities.
+- **URL Routing:** Mastered mapping URLs to views and using namespaces to avoid conflicts.
+- **Template Rendering:** Utilized Django’s templating system to create dynamic HTML pages.
+- **Admin Customization:** Configured the Django admin interface for efficient data management.
+- **Form Handling:** Managed user input securely with form validation and CSRF protection.
+- **Version Control:** Effectively used Git for version tracking and collaboration.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
+## Acknowledgements
+
+- **Django Documentation:** [https://docs.djangoproject.com/en/5.1/intro/tutorial04/](https://docs.djangoproject.com/en/5.1/intro/tutorial04/)
+- **Choose a License:** [https://choosealicense.com/](https://choosealicense.com/)
+- **GitHub Guides:** [https://guides.github.com/](https://guides.github.com/)
+
+## Future Improvements
+
+- **User Authentication:** Implement user registration and login functionalities.
+- **Enhanced UI/UX:** Improve the frontend with better design and responsiveness.
+- **REST API:** Develop a RESTful API for the polls app.
+- **Deployment:** Deploy the application to a cloud platform like Azure or AWS.
+
+## Contributing
+
+Contributions are welcome! Please fork the repository and create a pull request with your changes.
