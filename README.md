@@ -80,4 +80,4 @@ admin.site.register(Question)
 
 ## Resources
 
-1. **Django Documentation:** https://docs.djangoproject.com/en/5.1/intro/
+- **Django Documentation:** https://docs.djangoproject.com/en/5.1/intro/
